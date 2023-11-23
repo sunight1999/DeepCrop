@@ -57,8 +57,15 @@ def monitorImageQueue():
         
         time.sleep(IMAGE_QUEUE_MONITORING_DELAY)
 
+pre = 1
 def predictImage(image):
-    return 1
+    global pre
+    pre += 1
+
+    if pre == 3:
+        pre = 1
+
+    return pre
 
 def removeClinet(sock):
     if sock in read_socks:
